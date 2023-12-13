@@ -29,7 +29,7 @@ function DiceRoll (){
                 rolling: false
         }
     })
-    }, 1000);
+    },1000);
 
     return(
         <div className='rolling'>
