@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import './dice.css'
-// import Die from './Die'
+// import Dice from './Dice.js'
   
 function DiceRoll (){ 
 
@@ -20,16 +20,18 @@ function DiceRoll (){
             rolling: true
             }
         })
+
+        setTimeout(()=>{
+            setProps(prevState => {
+                return {
+                    ...prevState,
+                    rolling: false
+            }
+        })
+        },1000);
     }
 
-    setTimeout(()=>{
-        setProps(prevState => {
-            return {
-                ...prevState,
-                rolling: false
-        }
-    })
-    },1000);
+
 
     return(
         <div className='rolling'>
@@ -38,7 +40,7 @@ function DiceRoll (){
             </div>
         <button
         disabled = {props.rolling}
-        onClick = {props.roll}>
+        onClick = {roll}>
             {props.rolling ? 'Rolling' : 'Roll Dice!'}
         </button>
         </div>
