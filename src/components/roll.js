@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import './dice.css'
-// import Dice from './Dice.js'
+import Dice from './dice.js'
   
 function DiceRoll (){ 
 
@@ -32,11 +32,11 @@ function DiceRoll (){
     }
 
 
-
     return(
         <div className='rolling'>
             <div className = "dice">
-                |Dice here
+                <Dice rolling = {props.rolling} top = {props.diceA} />
+                <Dice rolling = {props.rolling} top = {props.diceB} />
             </div>
         <button
         disabled = {props.rolling}
